@@ -25,7 +25,7 @@ int main() {
     while(WindowShouldClose() == false) {
         UpdateMusicStream(game.music);
         game.HandleInput();
-        if (EventTriggered(0.01)) {
+        if (EventTriggered(0.3)) {
             game.MoveBlockDown();
         }
         BeginDrawing();
