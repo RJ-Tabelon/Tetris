@@ -2,6 +2,14 @@
 
 A classic Tetris implementation built with C++ and Raylib.
 
+## Screenshots
+
+<div align="center">
+  <img src="PlayingGame.png" alt="Gameplay" width="45%" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="GameOver.png" alt="Game Over" width="45%" />
+</div>
+
 ## Overview
 Tetris is a classic tile-matching puzzle video game where players manipulate falling geometric shapes, called tetrominoes, to create complete horizontal lines within a rectangular playfield. Each tetromino is composed of four connected squares arranged in different configurations, and players must rotate and position them as they descend to prevent the stack from reaching the top. Successfully completing a line causes it to disappear, earning points and creating more room for new pieces.
 
@@ -175,9 +183,3 @@ Tetris/
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
-
-## Acknowledgments
-
-- Built with [Raylib](https://www.raylib.com) - Simple and easy-to-use library for game development
-- Classic Tetris gameplay mechanics
-- Font: ARCADE CLASSIC by Jakob Fischer
