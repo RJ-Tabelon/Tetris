@@ -23,8 +23,9 @@ int main() {
     Game game = Game();
 
     while(WindowShouldClose() == false) {
+        UpdateMusicStream(game.music);
         game.HandleInput();
-        if (EventTriggered(0.3)) {
+        if (EventTriggered(0.01)) {
             game.MoveBlockDown();
         }
         BeginDrawing();
@@ -33,6 +34,8 @@ int main() {
         DrawTextEx(font, "Next", {372, 175}, 30, 2, WHITE);
         if (game.gameOver) {
             DrawTextEx(font, "Game Over", {332, 450}, 30, 2, WHITE);
+            DrawTextEx(font, "Press Any Key", {348, 500}, 15, 2, WHITE);
+            DrawTextEx(font, "To Play Again", {348, 520}, 15, 2, WHITE);
         }
         DrawRectangleRounded({320, 55, 170, 60}, 0.3, 6, lighterPurple);
 
