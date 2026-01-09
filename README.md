@@ -22,16 +22,16 @@ A small, single-player Tetris clone written in C++ using raylib. It’s aimed at
 
 ```mermaid
 flowchart TD
-   A[main loop\nInitWindow + BeginDrawing] --> B[Game::HandleInput\nkeyboard → actions]
-   A --> C[Timer tick (0.3s)\nGame::MoveBlockDown]
-   B --> D[Game state]\n
+  A[main loop<br/>InitWindow + BeginDrawing] --> B[Game::HandleInput<br/>keyboard → actions]
+  A --> C[Timer tick (0.3s)<br/>Game::MoveBlockDown]
+  B --> D[Game state]
    C --> D
-   D --> E[Grid state\n20x10 int matrix]
-   D --> F[Current/Next Block\nrotation + offsets]
-   D --> G[Audio state\nMusic/Sounds]
-   E --> H[Render\nGrid::Draw]
+  D --> E[Grid state<br/>20x10 int matrix]
+  D --> F[Current/Next Block<br/>rotation + offsets]
+  D --> G[Audio state<br/>Music/Sounds]
+  E --> H[Render<br/>Grid::Draw]
    F --> H
-   H --> I[UI\nScore + Next + Game Over text]
+  H --> I[UI<br/>Score + Next + Game Over text]
 ```
 
 ### Components and responsibilities
