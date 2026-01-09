@@ -20,18 +20,28 @@ A small, single-player Tetris clone written in C++ using raylib. It’s aimed at
 
 ### Architecture
 
-```mermaid
-flowchart TD
-  A[main loop<br/>InitWindow + BeginDrawing] --> B[Game::HandleInput<br/>keyboard → actions]
-  A --> C[Timer tick (0.3s)<br/>Game::MoveBlockDown]
-  B --> D[Game state]
-   C --> D
-  D --> E[Grid state<br/>20x10 int matrix]
-  D --> F[Current/Next Block<br/>rotation + offsets]
-  D --> G[Audio state<br/>Music/Sounds]
-  E --> H[Render<br/>Grid::Draw]
-   F --> H
-  H --> I[UI<br/>Score + Next + Game Over text]
+```text
+┌───────────────────────────────────────────────────────────────┐
+│ main loop (src/main.cpp)                                      │
+│ - InitWindow + SetTargetFPS                                   │
+│ - per-frame: HandleInput + Draw                               │
+│ - every ~0.3s: MoveBlockDown (gravity)                         │
+└───────────────┬───────────────────────────────┬───────────────┘
+                │                               │
+                v                               v
+┌──────────────────────────────┐     ┌───────────────────────────┐
+│ Game (src/game.*)            │     │ Audio (raylib)             │
+│ - current/next block         │     │ - music stream             │
+│ - score + gameOver           │     │ - rotate/clear sounds      │
+│ - movement/rotation/locking  │     └───────────────────────────┘
+└───────────────┬──────────────┘
+                │
+                v
+┌───────────────────────────────────────────────────────────────┐
+│ Grid (src/grid.*)                                              │
+│ - 20x10 int matrix (0 = empty, >0 = block id/color)             │
+│ - row clear + shift down                                        │
+└───────────────────────────────────────────────────────────────┘
 ```
 
 ### Components and responsibilities
