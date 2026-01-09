@@ -4,8 +4,11 @@ A small, single-player Tetris clone written in C++ using raylib. It’s aimed at
 
 ## Screenshots
 
-- Gameplay: [PlayingGame.png](PlayingGame.png)
-- Game Over: [GameOver.png](GameOver.png)
+<div align="center">
+  <img src="PlayingGame.png" alt="Gameplay" width="45%" />
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="GameOver.png" alt="Game Over" width="45%" />
+</div>
 
 ## Key Features
 
