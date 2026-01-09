@@ -25,22 +25,22 @@ A small, single-player Tetris clone written in C++ using raylib. It’s aimed at
 │ main loop (src/main.cpp)                                      │
 │ - InitWindow + SetTargetFPS                                   │
 │ - per-frame: HandleInput + Draw                               │
-│ - every ~0.3s: MoveBlockDown (gravity)                         │
+│ - every ~0.3s: MoveBlockDown (gravity)                        │
 └───────────────┬───────────────────────────────┬───────────────┘
                 │                               │
                 v                               v
 ┌──────────────────────────────┐     ┌───────────────────────────┐
-│ Game (src/game.*)            │     │ Audio (raylib)             │
-│ - current/next block         │     │ - music stream             │
-│ - score + gameOver           │     │ - rotate/clear sounds      │
+│ Game (src/game.*)            │     │ Audio (raylib)            │
+│ - current/next block         │     │ - music stream            │
+│ - score + gameOver           │     │ - rotate/clear sounds     │
 │ - movement/rotation/locking  │     └───────────────────────────┘
 └───────────────┬──────────────┘
                 │
                 v
 ┌───────────────────────────────────────────────────────────────┐
-│ Grid (src/grid.*)                                              │
-│ - 20x10 int matrix (0 = empty, >0 = block id/color)             │
-│ - row clear + shift down                                        │
+│ Grid (src/grid.*)                                             │
+│ - 20x10 int matrix (0 = empty, >0 = block id/color)           │
+│ - row clear + shift down                                      │
 └───────────────────────────────────────────────────────────────┘
 ```
 
